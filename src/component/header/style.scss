@@ -1,0 +1,23 @@
+
+  .box{
+    box-shadow: 2px 3px 4px #ccc; 
+    padding: 12px 100px;
+    background-color: #161616;
+    text-align: center;
+    color:#fff;
+    .imgB{
+      margin-right: 50px;
+      img{
+        vertical-align: bottom;
+      }
+      .stext{
+        margin-left: 8px;
+        font-size: 30px;
+        color:#3FB34F;
+        vertical-align: top;
+
+      }
+    }
+    
+    
+}  
