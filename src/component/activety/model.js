@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {message} from 'antd';
 import bind from 'react-autobind';
+import axios  from 'axios';
+axios.defaults.headers['Content-Type'] = 'application/json; charset=utf-8';
 
 export default class model extends Component {
     constructor(props){
@@ -17,6 +19,9 @@ export default class model extends Component {
 
         message.success('刷新成功');
        
+    }
+    componentDidMount(){
+       axios.post("http//:localhost:80/worker/info")
     }
 
     render() {

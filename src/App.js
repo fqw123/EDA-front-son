@@ -13,8 +13,8 @@ function App() {
     <BrowserRouter>
     <Header/>
         <Switch> 
-          <Route   path='/' component={Computer}   / >  
-          <Route   path='/computer' component={Computer}   / >
+          <Route   path='/' component={editAction}   / >  
+       
           <Route   path='/action' component={editAction}   / >
 
         </Switch>

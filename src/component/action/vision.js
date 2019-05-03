@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import bind from 'react-autobind'
 import {Link} from 'react-router-dom';
 import {Icon, Tabs, Input, Button} from 'antd';
 import   './style.scss';
@@ -6,14 +7,35 @@ import   './style.scss';
 import Goback from '../../common/goBack';
 const Search = Input.Search;
 
-export default class view extends Component {
+export default class view extends Component{
     constructor(props){
         super(props);
         this.state = {
-            data: [{use: true, id: '123456' }, {use: true, id: '123456' }, {use: true, id: '123456' }, {use: true, id: '123456' }, {use: true, id: '123456' }, {use: false, id: '123456' }, {use: true, id: '123456' } ]
-        };
-    }
+            data: [{use: true, id: '123456' }, {use: true, id: '123456' }, {use: true, id: '123456' }, {use: true, id: '123456' }, {use: true, id: '123456' }, {use: false, id: '123456' }, {use: true, id: '123456' } ],
+            value:"",
+            dataPackage:{}
 
+        };
+        bind(this);
+    }
+    searchValue(value){
+       console.log("按键值",value);
+       value.persist();
+       let e=value.target.value;
+       if(e.length<3){
+        this.setState({
+            value:"0x3"
+        })
+       }else{
+        this.setState({
+            value:e
+        })
+       }
+     
+    }
+    conform(){
+             
+    }
     render() {
         return (
             <div className={ '  clearfix'}>
@@ -25,13 +47,16 @@ export default class view extends Component {
                 <div className={ "left "}>
                     <div  className={ "sealine " + ' clearfix'}> 
                         <div  className={" searchL" }>
-                            <Search
+                            <Input
                                 placeholder="请输入按键值0x30~0x3D"
-                                enterButton="确认"
+                            
+                                value={this.state.value}
                                 size="large"
-                                onSearch={value => console.log(value)}
-                            />  
+                                onChange={this.searchValue.bind(this)}
+                            />     
+                           
                         </div>
+                        <div   className={'fuwei '} >   <Button type="primary"  onClick={value=>this.conform}   >确定</Button></div>
                         <div   className={'fuwei '}>   <Button type="primary">复位</Button></div>
                     </div>
                     <div  className="fourBtn">

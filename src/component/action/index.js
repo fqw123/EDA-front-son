@@ -1,6 +1,6 @@
 
 import React from 'react';
-import View from './view';
+import View from './tabs';
 import Model from './model';
 
 export default function(props) {
