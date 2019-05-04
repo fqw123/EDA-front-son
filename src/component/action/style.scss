@@ -131,12 +131,18 @@
   }
  
   .tijiao{
+
     .ant-btn-primary {
       width: 120px;
       margin-top: 50px;
   
     }
+   
   }
+  .card{
+    box-shadow: 2px 2px 2px #ccc;
+    margin-top: 30px;
+    }
 
 .vision1{
   .pline{
@@ -153,4 +159,16 @@
    }
   }
  
+}
+.peihi{
+  margin-top: 30px;
+  .tablePins{
+    .ant-input{
+      width:200px;
+    }
+    .piname{
+      display: inline-block;
+      margin-left: 20px;
+    }
+  }
 }
